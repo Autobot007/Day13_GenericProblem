@@ -8,7 +8,7 @@
             FindMax obj1 = new FindMax();
             while (check)
             {
-                Console.WriteLine("Select option :\n" + "1)Find Integer Maximum Number\n"+"2)Find Float Maximum Number");
+                Console.WriteLine("Select option :\n" + "1)Find Integer Maximum Number\n"+"2)Find Float Maximum Number\n"+"3)Find String Maximum Asci Value");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
@@ -23,7 +23,14 @@
                         Console.WriteLine(resultfloat);
                         Console.WriteLine("-------------------------------------");
                         Console.WriteLine("Maximum Number is :" + resultfloat);
-                        break;                        
+                        break;
+                    case 3:
+                        string resultstring = obj1.FindMx("Apple","Peach","Banana");
+                        Console.WriteLine(resultstring);
+                        Console.WriteLine("-------------------------------------");
+                        Console.WriteLine("Maximum Number is :" + resultstring);
+                        break;
+
                     default:
                         check = !check;
                         break;
