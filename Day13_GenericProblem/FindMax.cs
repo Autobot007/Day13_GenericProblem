@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Day13_GenericProblem
 {
+
     public class FindMax<T> where T : IComparable
     {
         public T[] value;
@@ -13,32 +14,89 @@ namespace Day13_GenericProblem
         {
             this.value = value;
         }
-        //        public T first,second,third;    
-        //        public FindMax(T first, T second, T third)
+
+        public T[] Sort(T[] values)
+        {
+            Array.Sort(values);
+            return values;
+        }
+
+        public T MaxValue(params T[] values)
+        {
+            var sortedValues = Sort(values);
+            return sortedValues[^1];
+        }
+        public T MaxMethod()
+        {
+            var max = MaxValue(this.value);
+            return max;
+        }
+        public void PrintMaxValue()
+        {
+            var max = MaxValue(this.value);
+            Console.WriteLine("Maximum Value is :" + max);
+
+        }
+
+        //public class FindMax
+        //{
+        //    public int FindMx(int First, int Second, int Third)
+        //    {
+        //        if (First.CompareTo(Second) > 0 && First.CompareTo(Third) > 0)
         //        {
-        //            this.first = first;
-        //            this.second = second;
-        //            this.third = third;
+        //            return First;
+        //        }
+        //        if (Second.CompareTo(First) > 0 && Second.CompareTo(Third) > 0)
+        //        {
+        //            return Second;
+        //        }
+        //        if (Third.CompareTo(First) > 0 && Third.CompareTo(Second) > 0)
+        //        {
+        //            return Third;
+        //        }
+        //        return 0;
+        //    }
+        //    public float FindMx(float First, float Second, float Third)
+        //    {
+        //        if (First.CompareTo(Second) > 0 && First.CompareTo(Third) > 0)
+        //        {
+        //            return First;
+        //        }
+        //        if (Second.CompareTo(First) > 0 && Second.CompareTo(Third) > 0)
+        //        {
+        //            return Second;
+        //        }
+        //        if (Third.CompareTo(First) > 0 && Third.CompareTo(Second) > 0)
+        //        {
+        //            return Third;
+        //        }
+        //        return 0;
+        //    }
+        //    public string FindMx(string firstString, string secondString, string thirdString)
+        //    {
+        //        if (firstString.CompareTo(secondString) > 0 && firstString.CompareTo(thirdString) > 0 ||
+        //            firstString.CompareTo(secondString) >= 0 && firstString.CompareTo(thirdString) > 0 ||
+        //            firstString.CompareTo(secondString) > 0 && firstString.CompareTo(thirdString) >= 0)
+        //        {
+        //            return firstString;
         //        }
 
-        //        public T FindMx(T First,T Second,T Third)
+        //        if (secondString.CompareTo(firstString) > 0 && secondString.CompareTo(thirdString) > 0 ||
+        //            secondString.CompareTo(firstString) >= 0 && secondString.CompareTo(thirdString) > 0 ||
+        //            secondString.CompareTo(firstString) > 0 && secondString.CompareTo(thirdString) >= 0)
         //        {
-        //            if (First.CompareTo(Second) > 0 && First.CompareTo(Third) > 0)
-        //            {
-        //                return First;
-        //            }
-        //            if (Second.CompareTo(First) > 0 && Second.CompareTo(Third) > 0)
-        //            {
-        //                return Second;
-        //            }
-        //            if (Third.CompareTo(First) > 0 && Third.CompareTo(Second) > 0)
-        //            {
-        //                return Third;
-        //            }
-        //            return default;
+        //            return secondString;
         //        }
 
+        //        if (thirdString.CompareTo(firstString) > 0 && thirdString.CompareTo(secondString) > 0 ||
+        //            thirdString.CompareTo(firstString) >= 0 && thirdString.CompareTo(secondString) > 0 ||
+        //            thirdString.CompareTo(firstString) > 0 && thirdString.CompareTo(secondString) >= 0)
+        //        {
+        //            return thirdString;
+        //        }
+        //        return String.Empty;
         //    }
         //}
     }
+
 }

@@ -4,15 +4,22 @@
     {
         public static void Main(string[] args)
         {
-            int[] array = { 1, 2, 3, 4, 5, 6, };
-            FindMax<int> generic = new FindMax<int>(array);
+
+            int[] intArray = { 1, 2, 3, 4, 5, 6, };
+            FindMax<int> intGeneric = new FindMax<int>(intArray);
+            intGeneric.PrintMaxValue();
+
+            string[] stringArray = { "1","2","3","4","5","6","7"};
+            FindMax<string> stringGeneric = new FindMax<string>(stringArray);
+            stringGeneric.PrintMaxValue();
 
 
-
-
-
+            float[] floatarray = { 1.8f, 2.9f, 3.4f,4.4f, 5.6f, 6.5f,1.8f };
+            FindMax<float> floatgeneric = new FindMax<float>(floatarray);
+            floatgeneric.PrintMaxValue();
+            
             //bool check = true;
-            //FindMax<T> obj1 = new FindMax<T>();
+
             //while (check)
             //{
             //    Console.WriteLine("Select option :\n" + "1)Find Integer Maximum Number\n"+"2)Find Float Maximum Number\n"+"3)Find String Maximum Asci Value");
