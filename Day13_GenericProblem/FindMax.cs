@@ -6,63 +6,39 @@ using System.Threading.Tasks;
 
 namespace Day13_GenericProblem
 {
-    internal class FindMax
+    public class FindMax<T> where T : IComparable
     {
-        public int FindMx(int First, int Second, int Third)
+        public T[] value;
+        public FindMax(T[] value)
         {
-            if (First.CompareTo(Second) > 0 && First.CompareTo(Third) > 0)
-            {
-                return First;
-            }
-            if (Second.CompareTo(First) > 0 && Second.CompareTo(Third) > 0)
-            {
-                return Second;
-            }
-            if (Third.CompareTo(First) > 0 && Third.CompareTo(Second) > 0)
-            {
-                return Third;
-            }
-            return 0;
+            this.value = value;
         }
-        public float FindMx(float First, float Second, float Third)
-        {
-            if (First.CompareTo(Second) > 0 && First.CompareTo(Third) > 0)
-            {
-                return First;
-            }
-            if (Second.CompareTo(First) > 0 && Second.CompareTo(Third) > 0)
-            {
-                return Second;
-            }
-            if (Third.CompareTo(First) > 0 && Third.CompareTo(Second) > 0)
-            {
-                return Third;
-            }
-            return 0;
-        }
-        public string FindMx(string firstString, string secondString, string thirdString)
-        {
-            if (firstString.CompareTo(secondString) > 0 && firstString.CompareTo(thirdString) > 0 ||
-                firstString.CompareTo(secondString) >= 0 && firstString.CompareTo(thirdString) > 0 ||
-                firstString.CompareTo(secondString) > 0 && firstString.CompareTo(thirdString) >= 0)
-            {
-                return firstString;
-            }
+        //        public T first,second,third;    
+        //        public FindMax(T first, T second, T third)
+        //        {
+        //            this.first = first;
+        //            this.second = second;
+        //            this.third = third;
+        //        }
 
-            if (secondString.CompareTo(firstString) > 0 && secondString.CompareTo(thirdString) > 0 ||
-                secondString.CompareTo(firstString) >= 0 && secondString.CompareTo(thirdString) > 0 ||
-                secondString.CompareTo(firstString) > 0 && secondString.CompareTo(thirdString) >= 0)
-            {
-                return secondString;
-            }
+        //        public T FindMx(T First,T Second,T Third)
+        //        {
+        //            if (First.CompareTo(Second) > 0 && First.CompareTo(Third) > 0)
+        //            {
+        //                return First;
+        //            }
+        //            if (Second.CompareTo(First) > 0 && Second.CompareTo(Third) > 0)
+        //            {
+        //                return Second;
+        //            }
+        //            if (Third.CompareTo(First) > 0 && Third.CompareTo(Second) > 0)
+        //            {
+        //                return Third;
+        //            }
+        //            return default;
+        //        }
 
-            if (thirdString.CompareTo(firstString) > 0 && thirdString.CompareTo(secondString) > 0 ||
-                thirdString.CompareTo(firstString) >= 0 && thirdString.CompareTo(secondString) > 0 ||
-                thirdString.CompareTo(firstString) > 0 && thirdString.CompareTo(secondString) >= 0)
-            {
-                return thirdString;
-            }
-            return String.Empty;
-        }
+        //    }
+        //}
     }
 }
